@@ -1,9 +1,145 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="ja">
 <head>
-    <meta charset="utf-8">
-    <title>進化堂</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>進化堂 - 富山県朝日町 事務用品・雑誌・書籍</title>
+    <style>
+        /* 全体の設定：20年前にはなかった最新の書き方です */
+        :root {
+            --primary-color: #2c3e50; /* 濃紺：信頼感 */
+            --accent-color: #8e44ad;  /* 紫：バロックの優雅さ */
+            --bg-color: #fdfaf5;      /* 柔らかなベージュ */
+            --text-color: #333;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* ヘッダー：お洒落なグラデーション */
+        header {
+            background: linear-gradient(135deg, #f5f1e6 0%, #e8e0cc 100%);
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 3px double var(--primary-color);
+        }
+
+        .store-name {
+            font-size: 3rem;
+            margin: 0;
+            letter-spacing: 0.2rem;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .store-sub {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            margin-top: 10px;
+        }
+
+        /* コンテンツエリア */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            border-left: 5px solid var(--primary-color);
+            padding-left: 15px;
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+
+        .highlight-box {
+            background-color: #fff9e6;
+            border: 1px dashed #d4af37;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .tel-link {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        .tel-link:hover {
+            background: var(--accent-color);
+        }
+
+        /* フッター */
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* スマホ対応 */
+        @media (max-width: 600px) {
+            .store-name { font-size: 2rem; }
+        }
+    </style>
+</head>
 <body>
-    <h1>進化堂</h1>
+
+<header>
+    <h1 class="store-name">進化堂</h1>
+    <div class="store-sub">事務用品 ・ 雑誌 ・ 書籍 ・ コンピューター相談</div>
+</header>
+
+<div class="container">
+    <section>
+        <h2>営業案内</h2>
+        <p><strong>代表：水島 健</strong></p>
+        <p>進化堂では、事務用品、雑誌、書籍の販売を行っております。<br>
+        また、長年の経験を活かし、コンピューターやインターネットに関するちょっとしたお悩み、ご相談なども遠慮なくどうぞ。地域の皆様の「困った」に寄り添います。</p>
+        <p><strong>営業時間：</strong>月曜 〜 金曜（9:00 〜 17:00）</p>
+    </section>
+
+    <section>
+        <h2>定期購読の無料配達について</h2>
+        <p>現在、主に<strong>泊1〜3区</strong>の範囲を対象に、雑誌・週刊誌の定期購読配達を無料で行っております。</p>
+        <div class="highlight-box">
+            <p><strong>配達日：</strong>水曜日・金曜日<br>
+            <small>※1960年生まれの店主が一人で配達しております。発売日当日に必ずお届けするというお約束は難しいのですが、一軒一軒心を込めてお届けいたします。その点をご理解いただければ幸いです。</small></p>
+        </div>
+        <p>詳細やお問い合わせは、下記までお気軽にお電話ください。</p>
+        <a href="tel:09075894873" class="tel-link">📞 090-7589-4873（水島）</a>
+    </section>
+
+    <section>
+        <h2>アクセス</h2>
+        <p>〒939-0741<br>
+        富山県下新川郡朝日町泊297</p>
+    </section>
+</div>
+
+<footer>
+    &copy; 2024 進化堂 All Rights Reserved.
+</footer>
+
 </body>
 </html>
