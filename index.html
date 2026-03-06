@@ -126,7 +126,7 @@
             <small>※1960年生まれの店主が一人で配達しております。発売日当日に必ずお届けするというお約束は難しい事をご理解ください。</small></p>
         </div>
         
-        <p id="tel-link">お問合せ</p>
+        <span id="tel-link">お問合せ</span>
 
         <script>
           // ページ読み込み後に実行
@@ -135,7 +135,7 @@
             var part2 = "7589";
             var part3 = "4873";
             var tel = part1 + "-" + part2 + "-" + part3;
-            document.getElementById("tel-link").innerHTML = '<a href="tel:' + part1 + part2 + part3 + '" class="tel-link">📞 ' + tel + '（水島）</a>';
+            document.getElementById("tel-link").innerHTML = '<a href="tel:' + part1 + part2 + part3 + '" class="tel-link">お問合せは ' + tel + '（水島）</a>';
           };
         </script>
     </section>
