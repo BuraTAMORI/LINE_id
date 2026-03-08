@@ -50,24 +50,38 @@
             color: var(--accent-color);
         }
 
-        /* --- コンテンツエリア：背景画像の設定 --- */
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-       }
+	    /* 背景画像を画面いっぱいに広げつつ、containerの上端に合わせる箱 */
+	    .bg-wrapper {
+	        width: 100%;
+	        /* 画像設定：原寸表示、中央配置、上端合わせ、リピートあり */
+	        background-image: url("bwv1030.jpg"); /* ★画像ファイル名 */
+	        background-size: auto;       /* 原寸（重要） */
+	        background-position: center top; /* 中央・上端（重要） */
+	        background-repeat: repeat;   /* 縦横リピート */
+	        background-attachment: scroll; /* コンテンツと一緒に動く（上端を固定するため） */
+	    }
 
-        /* --- セクション：30%透過（不透明度0.7） --- */
-        section {
-            background: rgba(255, 255, 255, 0.7); /* 白を70%の濃さで */
-            padding: 30px;
-            margin-bottom: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            /* すりガラスのような効果を足して読みやすくします */
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-        }
+	    /* コンテンツエリア（中央寄せのガイド） */
+	    .container {
+	        max-width: 800px;
+	        margin: 0 auto;
+	        padding: 40px 20px;
+	        background: transparent; /* ここ自体は透明にする */
+	    }
+
+	    /* セクション：30%透過（不透明度0.7） */
+	    section {
+	        background-color: rgba(255, 255, 255, 0.7); 
+	        padding: 30px;
+	        margin-bottom: 30px;
+	        border-radius: 8px;
+	        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+	        
+	        /* 透過しても文字が読みやすいよう、背景をわずかにぼかす */
+	        backdrop-filter: blur(4px);
+	        -webkit-backdrop-filter: blur(4px);
+	    }
+
 
         h2 {
             border-left: 5px solid var(--primary-color);
@@ -76,13 +90,14 @@
             margin-top: 0;
         }
 
-        /* --- ハイライトボックス：50%透過（不透明度0.5） --- */
-        .highlight-box {
-            background-color: rgba(255, 249, 230, 0.5); /* 薄黄色を50%の濃さで */
-            border: 1px dashed #d4af37;
-            padding: 10px 20px;
-            margin: 20px 0;
-        }
+	    /* ハイライトボックス：50%透過（不透明度0.5） */
+	    .highlight-box {
+	        /* 背景色（薄いベージュ系）を50%透過 */
+	        background-color: rgba(255, 249, 230, 0.5); 
+	        border: 1px dashed rgba(212, 175, 55, 0.6);
+	        padding: 10px 20px;
+	        margin: 20px 0;
+	    }
 
         .tel-link {
             display: inline-block;
@@ -116,6 +131,7 @@
         }
     </style>
 </head>
+
 <body>
 
 <header>
@@ -124,53 +140,54 @@
     <div class="store-sub">事務用品 ・ 雑誌 ・ 書籍 ・ コンピューター、インターネット関連</div>
 </header>
 
-<div class="container">
-    <section>
-        <h2>営業案内</h2>
-        <p>進化堂では、事務用品、雑誌、書籍、コンピューター関連の販売を行って おります。<br>
-        また、コンピューターやインターネット、スマートフォン等に関するご相談なども遠慮なく どうぞ。</p>
-        <p><strong>営業時間：</strong>月曜 〜 金曜（9:00 〜 17:00）</p>
-        
-        <div class="highlight-box">
-            <p>当店の販売規模では、価格・納期ともに大手インターネット通販には かないません。</p>
-            <p>そこで、これまで長くご愛顧いただいた地域の皆様への恩返しの意味を込めまして、長年の経験を元に、現役の消費者の目線で<strong>購入のアドバイス</strong>をさせて いただいております。</p>
-        </div>
-    </section>
-
-    <section>
-        <h2>雑誌・週刊誌の配達</h2>
-        <p>主に<strong>泊1〜3区</strong>の範囲を対象に、雑誌・週刊誌の<strong>定期購読</strong>の配達を行って おります。</p>
-        <p>配達料金は、頂いて おりません。<br>
-            配達時間を短縮するために、代金は前払い・請求書払いで お願い しています。</p>
-        <div class="highlight-box">
-            <p><strong>配達日：</strong>主に 水曜日・金曜日<br>
-            <small>※1960年 生まれの店主が配達しております。基本的に発売日当日にお届け できない事を ご了承ください。</small></p>
-        </div>
-        
-        <span id="tel-link">お問合せ</span>
-
-        <script>
-          // ページ読み込み後に実行
-          window.onload = function() {
-            var part1 = "090";
-            var part2 = "7589";
-            var part3 = "4873";
-            var tel = part1 + "-" + part2 + "-" + part3;
-            document.getElementById("tel-link").innerHTML = '<a href="tel:' + part1 + part2 + part3 + '" class="tel-link">お問合せは ' + tel + '（水島）</a>';
-          };
-        </script>
-    </section>
-
-    <section>
-        <h2>アクセス</h2>
-        <p>〒939-0741<br>
-        富山県下新川郡朝日町泊297</p>
-    </section>
+<div class="bg-wrapper">
+	<div class="container">
+	    <section>
+	        <h2>営業案内</h2>
+	        <p>進化堂では、事務用品、雑誌、書籍、コンピューター関連の販売を行って おります。<br>
+	        また、コンピューターやインターネット、スマートフォン等に関するご相談なども遠慮なく どうぞ。</p>
+	        <p><strong>営業時間：</strong>月曜 ? 金曜（9:00 ? 17:00）</p>
+	        
+	        <div class="highlight-box">
+	            <p>当店の販売規模では、価格・納期ともに大手インターネット通販には かないません。</p>
+	            <p>そこで、これまで長くご愛顧いただいた地域の皆様への恩返しの意味を込めまして、長年の経験を元に、現役の消費者の目線で<strong>購入のアドバイス</strong>をさせて いただいております。</p>
+	        </div>
+	    </section>
+	
+	    <section>
+	        <h2>雑誌・週刊誌の配達</h2>
+	        <p>主に<strong>泊1?3区</strong>の範囲を対象に、雑誌・週刊誌の<strong>定期購読</strong>の配達を行って おります。</p>
+	        <p>配達料金は、頂いて おりません。<br>
+	            配達時間を短縮するために、代金は前払い・請求書払いで お願い しています。</p>
+	        <div class="highlight-box">
+	            <p><strong>配達日：</strong>主に 水曜日・金曜日<br>
+	            <small>※1960年 生まれの店主が配達しております。基本的に発売日当日にお届け できない事を ご了承ください。</small></p>
+	        </div>
+	        
+	        <span id="tel-link">お問合せ</span>
+	
+	        <script>
+	          // ページ読み込み後に実行
+	          window.onload = function() {
+	            var part1 = "090";
+	            var part2 = "7589";
+	            var part3 = "4873";
+	            var tel = part1 + "-" + part2 + "-" + part3;
+	            document.getElementById("tel-link").innerHTML = '<a href="tel:' + part1 + part2 + part3 + '" class="tel-link">お問合せは ' + tel + '（水島）</a>';
+	          };
+	        </script>
+	    </section>
+	
+	    <section>
+	        <h2>アクセス</h2>
+	        <p>〒939-0741<br>
+	        富山県下新川郡朝日町泊297</p>
+	    </section>
+	</div>
+	
+	<footer>
+	    &copy; 2024 進化堂 All Rights Reserved.
+	</footer>
 </div>
-
-<footer>
-    &copy; 2024 進化堂 All Rights Reserved.
-</footer>
-
 </body>
 </html>
